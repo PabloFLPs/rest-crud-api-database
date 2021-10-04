@@ -51,11 +51,11 @@ Use the dotenv library with the .env file structured as below.
 
 The .env file must have this structure:
 ```
-username=database_username
-password=database_password
-database=database_name
-host=host
-dialect=database_type
+DB_USERNAME=database_username
+DB_PASSWORD=database_password
+DB_NAME=database_name
+HOST=host
+DB_DIALECT=database_type
 ```
 
 
