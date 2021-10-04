@@ -30,7 +30,8 @@ JSON:
 `yarn add pg`: adding postgres config;
 `yarn add sequelize`: adding sequelize.
 
-**Remember to add your own credentials to the database config file!**
+**Remember to add your own database credentials to the database config file!**
+Use the dotenv library with the .env file structured as below.
 
 ## Tutorial:
 - Adding express dependencies:
@@ -44,6 +45,18 @@ JSON:
 
 - Adding the sequelize command line interface:
 `yarn add sequelize-cli`
+
+- Adding dotenv library:
+`yarn add dotenv`
+
+The .env file must have this structure:
+```
+username=database_username
+password=database_password
+database=database_name
+host=host
+dialect=database_type
+```
 
 
 ## Database
