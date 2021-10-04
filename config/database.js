@@ -1,7 +1,15 @@
+require("dotenv").config()
+
+const username=process.env.DB_USERNAME
+const password=process.env.DB_PASSWORD
+const database=process.env.DB_NAME
+const host=process.env.HOST
+const dialect=process.env.DB_DIALECT
+
 module.exports = {
-  "username": "postgres",
-  "password": "postgres",
-  "database": "crudapi",
-  "host": "127.0.0.1",
-  "dialect": "postgres"
+  "username": `${username}`,
+  "password": `${password}`,
+  "database": `${database}`,
+  "host": `${host}`,
+  "dialect": `${dialect}`
 }
