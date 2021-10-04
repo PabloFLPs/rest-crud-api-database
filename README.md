@@ -1,30 +1,50 @@
 # REST API
 ## CRUD API with NodeJS and Express
 
-This application is a CRUD API, CRUD is assign to "Create, Read, Update and Delete". In this case, we have:
+This application is a CRUD API. "CRUD" is assign to "Create, Read, Update and Delete". In this case, we have:
 - creating user route;
 - get users route;
 - update user route;
 - delete user route.
 
-This is a simple application without interaction with any databases, so the users in question are added in run-time and remain available while the API is running. For the users ID attibute, was used the uuid - Universal Unic Identifier library to generate IDs.
+This is a simple application with focus on database integration. So the users entity have only the following attributes:
+```
+JSON:
+{
+	name: name,
+	middlename: middlename:
+	age: age
+}
+```
+And the following as automatic attributes (dont need to be added on the create user route):
+```
+JSON:
+{
+	createdAt: createdAt
+	updateAt: updatedAt
+}
+```
 
 ## Settings to run:
+`yarn add express`: adding express;
+`yarn add pg`: adding postgres config;
+`yarn add sequelize`: adding sequelize.
+
+**Remember to add your own credentials to the database config file!**
 
 ## Tutorial:
 - Adding express dependencies:
 `yarn add express`
 
-`yarn add cors`
-
+- Adding sequelize dependencies:
 `yarn add sequelize`
 
+- Adding postgres databse config dependencies:
 `yarn add pg`
 
+- Adding the sequelize command line interface:
 `yarn add sequelize-cli`
 
-- Adding "uuid" dependencies:
-`yarn add uuid`
 
 ## Database
 We need a database to rest our data, so lets create one!
@@ -36,26 +56,15 @@ After downloading the Postgres client installer, we can choose to install only t
 
 And you have your local database!
 
-**Important Commands:**
-`yarn init -y`
-
-`yarn add express sequelize pg`
-
-`yarn add nodemon -D`
-
-`yarn add sequelize-cli -D`
-
-`yarn sequelize init`
-
-`yarn sequelize migration:create --name=create-user`
-
-`yarn sequelize db:migrate`
-
+**Important Commands to database integration:**
+`yarn sequelize init` initialize the Sequelize configuration files, dont worry about it.
+`yarn sequelize migration:create --name=create-user` creating migration, it already exists on the project, so dont worry about it too.
+`yarn sequelize db:migrate` migrate the migrations for the entities creation on database.
 
 ## Backup de Problemas:
 **Problemas enfrentados para realizar o projeto**
-
-* problema na model -> refiz o projeto 2 vezes (exceto bd)
-* falta do created_at e updated_at que n sabia que eram necessarios
-* created_at sem a propriedade de underscored
-* falta de dar require do databse na index.js da API
+- utilizar `type: module` no package.json e trollar o Sequelize;
+- problema na model -> refiz o projeto 2 vezes (exceto bd);
+- falta do created_at e updated_at que n sabia que eram necessarios;
+- created_at sem a propriedade de underscored;
+- falta de dar require do databse na index.js da API.
