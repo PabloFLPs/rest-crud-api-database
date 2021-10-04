@@ -16,8 +16,11 @@ This is a simple application without interaction with any databases, so the user
 `yarn add express`
 
 `yarn add cors`
+
 `yarn add sequelize`
+
 `yarn add pg`
+
 `yarn add sequelize-cli`
 
 - Adding "uuid" dependencies:
@@ -35,13 +38,22 @@ And you have your local database!
 
 **Important Commands:**
 `yarn init -y`
+
 `yarn add express sequelize pg`
+
 `yarn add nodemon -D`
+
 `yarn add sequelize-cli -D`
 
 `yarn sequelize init`
+
 `yarn sequelize migration:create --name=create-user`
+
 `yarn sequelize db:migrate`
+
+
+## Backup de Problemas:
+**Problemas enfrentados para realizar o projeto**
 
 * problema na model -> refiz o projeto 2 vezes (exceto bd)
 * falta do created_at e updated_at que n sabia que eram necessarios
